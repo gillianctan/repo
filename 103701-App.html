@@ -126,8 +126,18 @@
 				
 				$("#content").append(f);
 
-				var coverphoto = "<h4> Cover Photo: No Cover photo </h4> ";
-				$("#content").append(coverphoto);
+				var c = "<h4> Cover Photo: No Cover photo </h4> ";
+				if (data.cover.source == undefined)
+				{
+					c += "No Cover";
+				}
+				else
+				{
+					c += "<img src=" + data["cover"]["source"] + ">";	
+				}
+				
+				//c += "<img src=" + data.cover.source + ">";
+				$("#content").append(c);
 
 				
 				var z = "<h4> <br> Latest Event Attended: </h4>";
